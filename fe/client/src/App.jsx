@@ -1,0 +1,32 @@
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import LoginPage from "./pages/loginpage";
+import RegisterPage from "./pages/RegisterPage";
+import Dashboard from "./pages/Dashboard";
+import Transfers from "./pages/Transfers"; // ✅ import Transfers page
+import Expenditure from "./pages/expenditure";
+function App() {
+  return (
+    <Router>
+      <Routes>
+        {/* Default route → redirect to login */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
+
+        {/* Auth routes */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+
+        {/* Assignments page */}
+        <Route path="/expend" element={<Expenditure />} />
+        
+        <Route path="/Transfers" element={<Transfers />} />
+        {/* Dashboard */}
+        <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* Catch-all → redirect to login */}
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
