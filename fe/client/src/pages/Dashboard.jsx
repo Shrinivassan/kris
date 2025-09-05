@@ -8,6 +8,8 @@ import {
   CheckCircle,
   AlertTriangle,
   Info,
+  ClipboardCheck,
+  Package   // ✅ Added this import
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -110,7 +112,7 @@ const Dashboard = () => {
               </button>
 
               <button
-                onClick={() => navigate("/assign")}
+                onClick={() => navigate("/expend")}
                 className="flex items-center space-x-2 text-gray-400 hover:text-white px-3 py-2"
               >
                 <Shield className="w-4 h-4" />
@@ -124,14 +126,20 @@ const Dashboard = () => {
                 <Users className="w-4 h-4" />
                 <span>Transfers</span>
               </button>
-
               <button
-                onClick={() => navigate("/transactions")}
+                onClick={() => navigate("/purchases")}
                 className="flex items-center space-x-2 text-gray-400 hover:text-white px-3 py-2"
               >
-                <ArrowRightLeft className="w-4 h-4" />
-                <span>Transactions</span>
+                <Package className="w-4 h-4" />
+                <span>Purchases</span>
               </button>
+              <button
+                onClick={() => navigate("/assignments")}
+                className="flex items-center space-x-2 text-gray-400 hover:text-white px-3 py-2"
+              >
+                <ClipboardCheck className="w-4 h-4" />
+                <span>Assignments</span>
+              </button>     
             </nav>
           </div>
 

@@ -4,6 +4,10 @@ import RegisterPage from "./pages/RegisterPage";
 import Dashboard from "./pages/Dashboard";
 import Transfers from "./pages/Transfers"; // ✅ import Transfers page
 import Expenditure from "./pages/expenditure";
+import Assignments from "./pages/Assignment"; 
+import Purchases from "./pages/Purchases.jsx";  
+
+
 function App() {
   return (
     <Router>
@@ -18,9 +22,14 @@ function App() {
         {/* Assignments page */}
         <Route path="/expend" element={<Expenditure />} />
         
+        <Route path="/assignments" element={<Assignments />} />
+
+        
         <Route path="/Transfers" element={<Transfers />} />
         {/* Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
+
+        <Route path="/purchases" element={<Purchases />} />
 
         {/* Catch-all → redirect to login */}
         <Route path="*" element={<Navigate to="/login" replace />} />
